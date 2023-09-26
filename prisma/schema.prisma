@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+model Cabin {
+  id          String    @id @default(uuid())
+  name        String
+
+  amenities   Amenity[] @relation("CabinAmenities")
+  houseRules  HouseRule[] @relation("CabinHouseRules")
+  bookings    Booking[] @relation("CabinToBooking")
+  images      Image[] 
+
+
+  latitude    String @default("")
+  longitude   String @default("")
+
+  checkOut    String
+  checkIn     String
+  description String @db.Text
+  location    String
+  isFeatured  Boolean
+  isNew       Boolean
+  price       String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+model Image {
+  id        String   @id @default(uuid())
+  cabinId   String    // Foreign key 
+  cabin     Cabin    @relation(fields: [cabinId], references: [id], onDelete: Cascade)
+  url       String   // url of the image
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([cabinId])
+}
+model Amenity {
+  id            String @id @default(uuid())
+  name          String
+  cabins        Cabin[] @relation("CabinAmenities")
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+}
+model HouseRule {
+  id           String @id @default(uuid())
+  name         String
+
+  cabins       Cabin[] @relation("CabinHouseRules")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+
+
+model Booking {
+  id            String @id @default(uuid())
+
+  cabinId       String
+  cabin         Cabin @relation("CabinToBooking", fields: [cabinId], references: [id])
+
+  checkInDate   DateTime
+  checkOutDate  DateTime
+
+  phone         String @default("")
+  totalPrice    String
+  persons       String
+  isPaid        Boolean
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([cabinId])
+}
