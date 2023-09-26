@@ -10,12 +10,34 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Cabin } from "@prisma/client";
+import {
+  Amenity,
+  Booking,
+  Cabin,
+  HouseRule,
+  Image as ImageModel,
+} from "@prisma/client";
 import { Trash } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface CabinItemAlertProps {
-  cabin: Cabin;
+  cabin: {
+    amenities: Amenity[];
+    houseRules: HouseRule[];
+    images: ImageModel[];
+    bookings: Booking[];
+    id: string;
+    name: string;
+    checkOut: string;
+    checkIn: string;
+    description: string;
+    location: string;
+    isFeatured: boolean;
+    isNew: boolean;
+    price: string;
+    createdAt: Date;
+    updatedAt: Date;
+  };
   onDelete: (id: string) => void;
 }
 
