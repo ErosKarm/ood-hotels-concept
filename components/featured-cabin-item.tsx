@@ -31,7 +31,7 @@ const FeaturedCabinItem = ({ cabin }: { cabin: FeaturedCabinItemProps }) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col h-auto w-[350px]">
+    <div className="flex flex-col h-auto w-[320px] sm:w-[370px] md:w-[270px] lg:w-[340px] xl:w-[330px]  mx-auto xl:mx-0 ">
       <div className="group relative h-[220px] w-full transition">
         <Image
           src={cabin.images[0].url}
@@ -70,23 +70,25 @@ const FeaturedCabinItem = ({ cabin }: { cabin: FeaturedCabinItemProps }) => {
         day
       </span>
 
-      <div className="flex gap-x-6  mt-3 text-slate-800 text-xs">
-        <span className="flex items-center">
-          <Navigation className="h-5 w-5 mr-1 bg-slate-800 text-white p-1 rounded-full" />
-          {cabin.location.slice(0, cabin.location.indexOf(","))}
-          ,
-          <Image
-            width={16}
-            height={16}
-            src="/ee-flag.png"
-            alt="estonian flag"
-            className="shadow-md ml-1"
-          />
-        </span>
-        <span className="flex items-center">
-          <ShowerHead className="h-5 w-5 mr-1 bg-slate-800 text-white p-1 rounded-full" />
-          {cabin.amenities.length} amenities..
-        </span>
+      <div className="flex gap-x-2 items-center mt-3 text-slate-800 text-xs">
+        <div className="flex flex-col gap-1.5">
+          <span className="flex items-center">
+            <Navigation className="h-5 w-5 mr-1 bg-slate-800 text-white p-1 rounded-full" />
+            {cabin.location.slice(0, cabin.location.indexOf(","))}
+            ,
+            <Image
+              width={16}
+              height={16}
+              src="/ee-flag.png"
+              alt="estonian flag"
+              className="shadow-md ml-1"
+            />
+          </span>
+          <span className="flex items-center">
+            <ShowerHead className="h-5 w-5 mr-1 bg-slate-800 text-white p-1 rounded-full" />
+            {cabin.amenities.length} amenities
+          </span>
+        </div>
 
         <Button className="ml-auto text-xs" size="sm">
           Check out

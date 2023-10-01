@@ -46,10 +46,10 @@ const CabinPageItem = ({ cabin }: CabinItemProps) => {
 
   return (
     <div
-      className="mt-8 flex gap-x-6 group group-hover:bg-rose-500 hover:shadow-md  transition-all cursor-pointer"
+      className="mt-8 flex gap-x-6 group hover:shadow-md  transition-all cursor-pointer w-full lg:w-[500px]  xl:w-[600px]"
       onClick={() => router.push(`/cabins/${cabin?.id}`)}
     >
-      <div className="h-[200px] w-[500px] relative">
+      <div className="h-[200px]  w-[500px] relative">
         <Image
           src={cabin?.images[0].url || ""}
           fill
@@ -95,7 +95,7 @@ const CabinPageItem = ({ cabin }: CabinItemProps) => {
               </span>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="hidden sm:flex items-center justify-center lg:hidden xl:flex">
               <span className="text-[10px] mr-2">Pay with:</span>
               <Image
                 src={"/american-express.webp"}

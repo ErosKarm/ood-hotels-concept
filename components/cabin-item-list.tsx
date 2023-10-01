@@ -40,12 +40,18 @@ interface CabinItemListProps {
 
 const CabinItemList = ({ cabins }: CabinItemListProps) => {
   return (
-    <div>
-      <ScrollArea className="h-[800px] pr-8">
+    <div className="col-span-5 lg:col-span-2">
+      <ScrollArea className="h-[800px] pr-8 col-span-2 hidden lg:block">
         {cabins.map((cabin) => (
           <CabinPageItem key={cabin.id} cabin={cabin} />
-        ))}{" "}
+        ))}
       </ScrollArea>
+
+      <div className="lg:hidden">
+        {cabins.map((cabin) => (
+          <CabinPageItem key={cabin.id} cabin={cabin} />
+        ))}
+      </div>
     </div>
   );
 };

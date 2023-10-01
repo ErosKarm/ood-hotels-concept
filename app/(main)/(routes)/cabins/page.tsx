@@ -16,25 +16,23 @@ const CabinsPage = async () => {
   });
 
   return (
-    <div className="pl-20 my-12 h-full">
-      <div className="flex justify-between">
-        <div>
+    <div className="px-6 md:px-20 lg:px-0 lg:pl-20 my-12 h-full">
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col items-center lg:items-start">
           <h1 className="text-3xl font-semibold tracking-wide">ÖÖD Cabins</h1>
           <span className="text-sm text-slate-700">
             A listing of all the cabins available in Estonia
           </span>
         </div>
-        <div className="flex items-center">
+        <div className="items-center hidden lg:flex">
           <span className="text-muted-foreground flex items-center text-xs justify-center tracking-wider">
             <MapPin className="w-4 h-4 mr-1" /> Estonia
           </span>
         </div>
       </div>
 
-      <div className="grid gap-x-12 grid-cols-5">
-        <div className="flex flex-col col-span-2">
-          <CabinItemList cabins={cabins} />
-        </div>
+      <div className="grid grid-cols-5 lg:flex gap-x-12 ">
+        <CabinItemList cabins={cabins} />
 
         <CabinPageMap cabins={cabins} />
       </div>

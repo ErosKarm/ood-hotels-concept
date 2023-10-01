@@ -1,15 +1,16 @@
 import Image from "next/image";
 
 import { Facebook, Instagram } from "lucide-react";
+import { Separator } from "./ui/separator";
 
 const Footer = () => {
   return (
-    <footer className="text-white relative  bg-slate-900 items-center justify-center grid grid-cols-6 px-72  pt-36 z-10 pb-24">
-      <div className="absolute bg-image-opacity h-full w-full -z-0" />
+    <footer className="text-white relative bg-slate-900 items-center justify-center grid grid-cols-6 px-8 sm:px-24 xl:px-72  pt-36 z-10 pb-24">
+      <div className="absolute bg-image-opacity h-full w-full" />
       <div className="col-span-7  mb-8">
         <Image src="/logo.svg" alt="Logo" width={200} height={100} />
       </div>
-      <div className="col-span-3 flex flex-col h-full ">
+      <div className="col-span-7 mb-6 lg:mb-0 lg:col-span-3 flex flex-col h-full ">
         <span className="font-bold">ÖÖD Hotel OÜ</span>
 
         <ul className="flex gap-4 flex-col mt-6 text-sm">
@@ -18,7 +19,8 @@ const Footer = () => {
           <li>Erika St 14 Tallinn 10416 Estonia</li>
         </ul>
       </div>
-      <div className="flex flex-col h-full">
+      <Separator className="col-span-7 mb-8 lg:hidden" />
+      <div className="flex flex-col h-full col-span-3 lg:col-span-1 mb-4 lg:mb-0">
         <span className="text-md mb-6 font-semibold tracking-wider text-">
           Links to navigate
         </span>
@@ -31,7 +33,7 @@ const Footer = () => {
           <li>Contact</li>
         </ul>
       </div>
-      <div className="flex flex-col h-full">
+      <div className="flex-col h-full flex col-span-4 lg:col-span-1">
         <span className="text-md mb-6 font-semibold tracking-wider text-">
           Legal
         </span>
@@ -41,7 +43,8 @@ const Footer = () => {
           <li>Terms & Conditions</li>
         </ul>
       </div>
-      <div className="flex flex-col h-full">
+      <Separator className="col-span-7 mb-8 lg:hidden" />
+      <div className="flex flex-col h-full col-span-3 lg:col-span-1 mb-8 lg:mb-0">
         <span className="text-md mb-6 font-semibold tracking-wider text-">
           Locations
         </span>
@@ -67,7 +70,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="col-span-2 p-4 bg-white flex gap-4 items-center rounded-sm">
+      <div className="col-span-7 p-4 bg-white flex gap-4 items-center rounded-sm lg:col-span-2">
         <Image
           src={"/eu-invest.svg"}
           width={170}
@@ -82,7 +85,7 @@ const Footer = () => {
           height={90}
         />
       </div>
-      <div className="col-span-5 p-4 flex gap-x-4   justify-end rounded-sm">
+      <div className="col-span-7 p-4 flex gap-x-4 lg:col-span-5 justify-end rounded-sm">
         <span className="text-[10px] text-slate-300">
           Available payment methods:
         </span>
@@ -108,7 +111,7 @@ const Footer = () => {
           height={40}
         />
       </div>
-      <span className="text-[10px] mt-5">
+      <span className="text-[10px] mt-5 col-span-7 text-center lg:text-left lg:col-span-1">
         © 2023 Eros Karm - All rights reserved.
       </span>
     </footer>

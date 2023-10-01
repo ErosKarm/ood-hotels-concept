@@ -59,7 +59,8 @@ const CabinPageMap = ({ cabins }: CabinPageMapProps) => {
       center={[58.5974875, 25]}
       zoom={8}
       scrollWheelZoom={false}
-      className="col-span-3 rounded"
+      className="hidden lg:flex col-span-3 rounded bg-rose-500 mt-auto h-full w-full"
+      style={{ width: "100%", height: "calc(90vh - 4rem)" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

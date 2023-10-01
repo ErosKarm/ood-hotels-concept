@@ -33,7 +33,7 @@ const CabinPage = async ({ params }: { params: { cabinId: string } }) => {
           Cabins --{">"} {cabin?.name}
         </span>
       </div>
-      <div className="grid grid-cols-3 w-full h-full gap-x-8 relative">
+      <div className="grid grid-cols-2 w-full h-full gap-x-8 relative 2xl:grid-cols-3">
         <div className="col-span-2">
           <CabinItemImages images={cabin?.images} />
 

@@ -86,4 +86,9 @@ body,
   background-size: cover;
   opacity: 0.25;
   pointer-events: none;
+  z-index: 1;
+}
+
+.custom-grid-cols {
+  grid-template-columns: 700px 1fr;
 }
