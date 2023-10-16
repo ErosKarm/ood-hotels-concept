@@ -49,7 +49,7 @@ const CabinPageItem = ({ cabin }: CabinItemProps) => {
       className="mt-8 flex gap-x-6 group hover:shadow-md  transition-all cursor-pointer w-full lg:w-[500px]  xl:w-[600px]"
       onClick={() => router.push(`/cabins/${cabin?.id}`)}
     >
-      <div className="h-[200px]  w-[500px] relative">
+      <div className="h-[170px]  w-[300px] sm:h-[200px] sm:w-[400px] relative ">
         <Image
           src={cabin?.images[0].url || ""}
           fill
@@ -59,7 +59,7 @@ const CabinPageItem = ({ cabin }: CabinItemProps) => {
         <Badge className="absolute top-2 left-2 bg-emerald-500 text-[11px]">
           NEW
         </Badge>
-        <h2 className="text-xs font-semibold absolute bottom-2 left-2  text-slate-700 bg-white p-1.5 rounded-sm">
+        <h2 className="text-xs font-semibold absolute bottom-2 left-2  text-slate-700 bg-white p-1.5 rounded-sm hidden sm:block">
           {cabin?.location}
         </h2>
       </div>
@@ -71,7 +71,7 @@ const CabinPageItem = ({ cabin }: CabinItemProps) => {
             {cabin?.location}
           </span>
           {cabin?.isNew === true ? (
-            <Badge className="text-[11px] ml-auto">NEW</Badge>
+            <Badge className="text-[11px] ml-auto hidden sm:block">NEW</Badge>
           ) : (
             ""
           )}

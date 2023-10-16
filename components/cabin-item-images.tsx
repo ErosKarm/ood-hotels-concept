@@ -27,7 +27,7 @@ const CabinItemImages = ({ images }: CabinItemImagesProps) => {
         />
       </div>
       <div className="grid grid-cols-2 gap-x-2">
-        <div className="relative">
+        <div className="relative hidden md:block">
           <Image
             src={images ? images[2].url : ""}
             fill
@@ -36,7 +36,7 @@ const CabinItemImages = ({ images }: CabinItemImagesProps) => {
           />
         </div>
 
-        <div className="relative">
+        <div className="relative col-span-2 md:col-span-1">
           <Image
             src={images ? images[3].url : ""}
             fill
